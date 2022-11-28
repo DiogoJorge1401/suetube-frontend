@@ -101,11 +101,14 @@ export const Upload = ({ setOpenPopUp }: UploadProps) => {
             break;
         }
       },
-      (error) => { },
+      (error) => { 
+        setIsUploading(false)
+      },
       () => {
         getDownloadURL(uploadTask.snapshot.ref)
           .then((downloadURL) => {
             setInputs((p: any) => ({ ...p, [urlType]: downloadURL }))
+            setIsUploading(false)
           });
       }
     );
