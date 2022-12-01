@@ -77,6 +77,10 @@ export const User = styled.div`
   align-items: center;
   gap: .75rem;
   font-weight: 500;
+
+  @media screen and (max-width: 480px){
+    width: 4rem;
+  }
 `
 export const VideoCall = styled(VideoCallOutlined)`
   cursor: pointer;

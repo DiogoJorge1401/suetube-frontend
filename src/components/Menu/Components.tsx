@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   z-index: 1;
-  flex: 1;
   height: 100vh;
+  width: 20rem;
 
   overflow: hidden;
   overflow-y: auto;
