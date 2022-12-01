@@ -22,7 +22,7 @@ const Main = styled.div`
   
   @media screen and (max-width: 1024px) { flex: 3.5 }
   @media screen and (max-width: 768px) { flex: 2.5 }
-  @media screen and (max-width: 425px) { flex: 1.5 }
+  @media screen and (max-width: 480px) { flex: 1.5 }
   @media screen and (max-width: 320px) { flex: .5 }
  
 `

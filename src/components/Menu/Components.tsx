@@ -2,15 +2,16 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
+  z-index: 1;
   flex: 1;
   height: 100vh;
 
   overflow: hidden;
   overflow-y: auto;
 
-  position: sticky;
+  position: fixed;
   transform: translateY(3.5rem);
-  top: 0;
+  top: -1px;
 
   background-color: ${({ theme }) => theme.bgLighter};
   color: ${({ theme }) => theme.text};

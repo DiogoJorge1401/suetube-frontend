@@ -14,6 +14,10 @@ export const Container = styled.div`
 
   padding: 0 1.625rem;
   height: 3.5rem;
+
+  @media screen and (max-width: 480px){
+    padding: 0 1rem
+  }
 `
 export const Wrapper = styled.div`
   position:relative;

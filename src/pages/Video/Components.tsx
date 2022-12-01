@@ -28,7 +28,7 @@ export const VideoFrame = styled.video`
   height: 100%;
   max-height: 45rem;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   
   outline: none;
 `
