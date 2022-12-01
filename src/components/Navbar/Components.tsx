@@ -20,20 +20,20 @@ export const Wrapper = styled.div`
 
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 
   height: 100%;
 `
 export const Search = styled.div`
-  width: 50%;
+  width: 45%;
   margin: 0 auto;
-  padding: .25rem;
+  padding: .25rem .5rem;
 
   display: flex;
   justify-content: space-between;
   
   border: 1px solid #ccc;
-  border-radius: .25rem;
+  border-radius: .5rem;
 `
 export const Input = styled.input`
   border: none;
@@ -49,7 +49,7 @@ export const Input = styled.input`
 export const Logo = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
 
   font-weight: 700;
   background-color: ${({ theme }) => theme.bgLighter};

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -10,14 +10,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html{
-    @media screen and (max-width: 768px) { 
-      font-size: 14px
+    @media screen and (max-width: 1024px) { 
+      font-size: 95%;
     }
-    @media screen and (max-width: 425px) { 
-      font-size: 13px
+    @media screen and (max-width: 768px) { 
+      font-size: 90%;
+    }
+    @media screen and (max-width: 480px) { 
+      font-size: 85%;
     }
     @media screen and (max-width: 320px) { 
-      font-size: 12px
+      font-size: 80%;
     }
   }
 
@@ -38,4 +41,4 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     object-fit: cover;
   }
-`
+`;

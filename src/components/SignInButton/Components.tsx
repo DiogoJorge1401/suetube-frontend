@@ -5,7 +5,7 @@ export const Button = styled.button`
   align-items: center;
   gap: .25rem;
 
-  padding: .25rem 1rem;
+  padding: .25rem .5rem;
   width:max-content;
 
   background-color: transparent;
