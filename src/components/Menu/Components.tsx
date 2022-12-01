@@ -17,10 +17,6 @@ export const Container = styled.div`
   color: ${({ theme }) => theme.text};
   font-size: 0.875rem;
 
-  @media screen and (max-width: 480px) {
-    font-size: 0.75rem;
-  }
-
   &::-webkit-scrollbar-button {
     height: 1rem;
   }
