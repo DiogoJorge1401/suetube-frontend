@@ -13,41 +13,43 @@ import {
   SportsBasketballOutlined,
   SportsEsportsOutlined,
   SubscriptionsOutlined,
-  VideoLibraryOutlined
-} from '@mui/icons-material';
-import { Container, Hr, Item, Login, Title, Wrapper } from './Components';
-import { SignInButton } from '../SignInButton/SignInButton';
-import { useAppSelector } from '../../redux/store';
-import { useLocation } from 'react-router-dom';
+  VideoLibraryOutlined,
+} from "@mui/icons-material";
+import { Container, Hr, Item, Login, Title, Wrapper } from "./Components";
+import { SignInButton } from "../SignInButton/SignInButton";
+import { useAppSelector } from "../../redux/store";
+import { useLocation } from "react-router-dom";
 
 interface MenuProps {
-  setDarkMode: (value: boolean) => void
-  darkMode: boolean
+  setDarkMode: (value: boolean) => void;
+  darkMode: boolean;
+  sideBarIsOpen: boolean;
 }
 
-export const Menu = ({ setDarkMode, darkMode }: MenuProps) => {
-  const { currentUser } = useAppSelector((state) => state.user)
-  const {pathname} = useLocation()
+export const Menu = ({ setDarkMode, darkMode, sideBarIsOpen }: MenuProps) => {
+  const { currentUser } = useAppSelector((state) => state.user);
+  const { pathname } = useLocation();
 
   return (
-    <Container>
+    <Container sideBarIsOpen={sideBarIsOpen}>
       <Wrapper>
-
-        <Item to='/'>
+        <Item to="/">
           <Home /> Home
         </Item>
 
-        <Item to='/trends'>
+        <Item to="/trends">
           <ExploreOutlined /> Explore
         </Item>
 
-        <Item to={!currentUser ? '/signin' : '/subscriptions'}>
+        <Item to={!currentUser ? "/signin" : "/subscriptions"}>
           <SubscriptionsOutlined /> Subscriptions
         </Item>
 
         <Hr />
 
-        {currentUser ? (<></>) : (
+        {currentUser ? (
+          <></>
+        ) : (
           <>
             <Login>
               Sign in to like videos, comment, and subscribe.
@@ -58,63 +60,60 @@ export const Menu = ({ setDarkMode, darkMode }: MenuProps) => {
           </>
         )}
 
-        <Title>
-          BEST OF SUETUBE
-        </Title>
+        <Title>BEST OF SUETUBE</Title>
 
-        <Item to=''>
+        <Item to="">
           <VideoLibraryOutlined /> Library
         </Item>
 
-        <Item to=''>
+        <Item to="">
           <HistoryOutlined /> History
         </Item>
 
         <Hr />
 
-        <Item to=''>
+        <Item to="">
           <LibraryMusicOutlined /> Music
         </Item>
 
-        <Item to=''>
+        <Item to="">
           <SportsBasketballOutlined /> Sports
         </Item>
 
-        <Item to=''>
+        <Item to="">
           <SportsEsportsOutlined /> Gaming
         </Item>
 
-        <Item to=''>
+        <Item to="">
           <MovieOutlined /> Movies
         </Item>
 
-        <Item to=''>
+        <Item to="">
           <ArticleOutlined /> News
         </Item>
 
-        <Item to=''>
+        <Item to="">
           <LiveTvOutlined /> Live
         </Item>
 
         <Hr />
 
-        <Item to=''>
+        <Item to="">
           <SettingsOutlined /> Settings
         </Item>
 
-        <Item to=''>
+        <Item to="">
           <FlagOutlined /> Report
         </Item>
 
-        <Item to=''>
+        <Item to="">
           <HelpOutlineOutlined /> Help
         </Item>
 
         <Item to={pathname} onClick={() => setDarkMode(!darkMode)}>
-          <SettingsBrightnessOutlined /> {darkMode ? 'Light' : 'Dark'} Mode
+          <SettingsBrightnessOutlined /> {darkMode ? "Light" : "Dark"} Mode
         </Item>
-
       </Wrapper>
     </Container>
-  )
-}
+  );
+};

@@ -57,6 +57,10 @@ export const Logo = styled.div`
 
   font-weight: 700;
   background-color: ${({ theme }) => theme.bgLighter};
+
+  @media screen and (max-width:480px){
+    gap: 0.5rem
+  }
 `
 export const LogoWrapper = styled(Link)`
   color: ${({ theme }) => theme.text};

@@ -1,21 +1,26 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div<{ sideBarIsOpen: boolean }>`
   z-index: 1;
-  height: 100vh;
-  width: 20rem;
+  height: ${({ sideBarIsOpen }) => (sideBarIsOpen ? "100vh" : "0")};
+  width: ${({ sideBarIsOpen }) => (sideBarIsOpen ? "20rem" : "0")};
 
   overflow: hidden;
   overflow-y: auto;
 
-  position: fixed;
+  position: relative;
   transform: translateY(3.5rem);
   top: -1px;
 
   background-color: ${({ theme }) => theme.bgLighter};
   color: ${({ theme }) => theme.text};
   font-size: 0.875rem;
+  transition: .5s ease-in-out;
+
+  @media screen and (max-width: 480px) {
+    position: fixed;
+  }
 
   &::-webkit-scrollbar-button {
     height: 1rem;
